@@ -1,4 +1,4 @@
-package semen.classroom.task_10.classroom;
+package classwork3;
 
 import java.io.IOException;
 
