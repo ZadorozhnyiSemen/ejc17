@@ -6,7 +6,7 @@ import java.util.List;
  * Bubble Sort class
  * Main behaviour - sort of Collection via Bubble sort algorithm
  */
-public class BubbleSort {
+public class BubbleSort implements Displayable{
     List<Integer> arrayList;
 
     public BubbleSort(List<Integer> arrayList) {
@@ -21,7 +21,7 @@ public class BubbleSort {
      *
      * @return sorted List
      */
-    public List<Integer> sortArray() {
+    public void sortArray() {
         int innerIndex;
         int outerIndex;
         for (outerIndex = arrayList.size() - 1; outerIndex > 1; outerIndex--) {
@@ -31,8 +31,6 @@ public class BubbleSort {
                 }
             }
         }
-
-        return arrayList;
     }
 
     /**
@@ -47,7 +45,7 @@ public class BubbleSort {
     }
 
     /**
-     * Display list in console
+     * @{inheritDoc}
      */
     public void display() {
         System.out.println(arrayList.toString());
