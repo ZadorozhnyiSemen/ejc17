@@ -24,7 +24,7 @@ public class RadixSort {
                 count[arrayForSort[i] / digitPlace % 10]++;
             }
 
-            for (int i = 1; i < arrayForSort.length; i++) {
+            for (int i = 1; i < count.length; i++) {
                 count[i] += count[i - 1];
             }
 

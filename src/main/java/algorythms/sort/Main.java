@@ -10,7 +10,10 @@ public class Main {
         int[] arrayForRadixSort = new int[]{22, 1, 234, 1245, 42, 51, 616, 666};
         int[] arrayForSelectionSort = new int[]{7,6,5,4,3,2,21,6};
         int[] arrayForInsertionSort = new int[]{3,5,6,7,54,42,26,32,32,12,42,65,35};
-        int[] arrayForMergeSort = new int[]{6,4,3,2,5,6,8,7,5,4,3,2,4345,6,324,7,2,45,2};
+        int[] arrayForMergeSort = new int[100];
+        for (int i = 0; i < 99; i++) {
+            arrayForMergeSort[i] = (int) (Math.random() * 1000);
+        }
 
         for (int i = 0; i < 25; i++) {
             arrayListForBubbleSort.add((int) (Math.random() * 1000));
