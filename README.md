@@ -4,6 +4,8 @@ EPAM Systems training center
 New up-to-date repo
 
 packages:
+
+0. algorithms - Binary Search and different types of sorting
 1. classwork1 - two tasks (working with strings)
 2. classwork2 - two tasks (working with strings)
 3. classwork3 - two tasks (working with synchronized and volatile)
