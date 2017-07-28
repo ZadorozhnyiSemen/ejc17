@@ -5,30 +5,29 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class InsertionSortTest {
+public class RadixSortTest {
     private int[] arrayForSort;
-    private InsertionSort insertionSort;
-    private int MAX_ELEMENTS = 1000;
+    private RadixSort radixSort;
+    private int MAX_ELEMENTS = 100;
 
     @Before
     public void setUp() {
         arrayForSort = new int[MAX_ELEMENTS];
         for (int i = 0; i < MAX_ELEMENTS - 1; i++) {
-            arrayForSort[i] = (int) (Math.random() * 300);
+            arrayForSort[i] = (int) (Math.random() * 1000);
         }
-        insertionSort = new InsertionSort(arrayForSort);
+        radixSort = new RadixSort(arrayForSort);
     }
-
     @Test
-    public void testInsertionSort() throws Exception {
-        insertionSort.display();
-        insertionSort.sort();
+    public void testRadixSort() throws Exception {
+        radixSort.display();
+        radixSort.sort();
         for (int i = 1; i < arrayForSort.length - 1; i++) {
             if (arrayForSort[i - 1] > arrayForSort[i]) {
-                fail("Insertion sort working bad");
+                fail("Radix sort is broken");
             }
         }
-        insertionSort.display();
+        radixSort.display();
         assertTrue(true);
     }
 

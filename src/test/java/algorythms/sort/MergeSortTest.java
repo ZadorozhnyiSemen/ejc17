@@ -5,9 +5,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class InsertionSortTest {
+public class MergeSortTest {
     private int[] arrayForSort;
-    private InsertionSort insertionSort;
+    private MergeSort mergeSort;
     private int MAX_ELEMENTS = 1000;
 
     @Before
@@ -16,19 +16,18 @@ public class InsertionSortTest {
         for (int i = 0; i < MAX_ELEMENTS - 1; i++) {
             arrayForSort[i] = (int) (Math.random() * 300);
         }
-        insertionSort = new InsertionSort(arrayForSort);
+        mergeSort = new MergeSort(arrayForSort);
     }
-
     @Test
-    public void testInsertionSort() throws Exception {
-        insertionSort.display();
-        insertionSort.sort();
+    public void testMergeSort() throws Exception {
+        mergeSort.display();
+        mergeSort.sort();
         for (int i = 1; i < arrayForSort.length - 1; i++) {
             if (arrayForSort[i - 1] > arrayForSort[i]) {
-                fail("Insertion sort working bad");
+                fail("Merge sort working bad");
             }
         }
-        insertionSort.display();
+        mergeSort.display();
         assertTrue(true);
     }
 
