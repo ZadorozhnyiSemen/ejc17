@@ -16,7 +16,7 @@ public class BubbleSortTest {
     @Before
     public void initializeArray() {
         arrayForSort = new ArrayList<>();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 100000; i++) {
             arrayForSort.add((int) (Math.random() * 300));
         }
 

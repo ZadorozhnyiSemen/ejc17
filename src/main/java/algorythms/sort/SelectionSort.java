@@ -3,7 +3,7 @@ package algorythms.sort;
 import java.util.Arrays;
 
 public class SelectionSort {
-    int[] arrayForSort;
+    private int[] arrayForSort;
 
     public SelectionSort(int[] arrayForSort) {
         this.arrayForSort = arrayForSort;

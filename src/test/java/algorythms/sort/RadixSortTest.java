@@ -30,5 +30,4 @@ public class RadixSortTest {
         radixSort.display();
         assertTrue(true);
     }
-
 }

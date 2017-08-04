@@ -3,7 +3,7 @@ package algorythms.sort;
 import java.util.List;
 
 public class QuickSort {
-    List<Integer> arrayList;
+    private List<Integer> arrayList;
 
     public QuickSort(List<Integer> arrayList) {
         this.arrayList = arrayList;

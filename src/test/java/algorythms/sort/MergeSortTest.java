@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 public class MergeSortTest {
     private int[] arrayForSort;
     private MergeSort mergeSort;
-    private int MAX_ELEMENTS = 1000;
+    private int MAX_ELEMENTS = 100000;
 
     @Before
     public void setUp() {

@@ -7,7 +7,7 @@ import java.util.List;
  * Main behaviour - sort of Collection via Bubble sort algorithm
  */
 public class BubbleSort implements Displayable{
-    List<Integer> arrayList;
+    private List<Integer> arrayList;
 
     public BubbleSort(List<Integer> arrayList) {
         this.arrayList = arrayList;
