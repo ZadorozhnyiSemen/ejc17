@@ -13,7 +13,7 @@ public class Main {
         ThreadUserProcessor userProcessor = new ThreadUserProcessor(workFileQueue);
         userProcessor.processFiles();
         System.out.println("Moving processed files");
-        provider.moveFilesToProcessed(provider.getWorkFolder());
-        System.out.println("asdasddas");
+        provider.moveFilesToProcessed();
+        System.out.println("Done!");
     }
 }

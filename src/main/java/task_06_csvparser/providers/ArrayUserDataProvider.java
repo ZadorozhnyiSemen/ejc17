@@ -52,13 +52,14 @@ public class ArrayUserDataProvider {
         }
     }
 
-    public void moveFilesToProcessed(File workFolder) {
-        List<File> list = getListFileForForlder(workFolder);
+    public void moveFilesToProcessed() {
+        List<File> list = getListFileForForlder(getWorkFolder());
         try {
             for (File file : list) {
-                System.out.println(ArrayUserDataProvider.processedFolder + "\\" + file.getName());
+                System.out.println(ArrayUserDataProvider.processedFolder.replace("\\", "/") + "/" + file.getName());
                 File newFile = new File(ArrayUserDataProvider.processedFolder + "\\" + file.getName());
-                Files.move(file.toPath(), Paths.get(ArrayUserDataProvider.processedFolder + "\\" + file.getName()), StandardCopyOption.REPLACE_EXISTING);
+                newFile.createNewFile();
+                Files.move(file.toPath(), newFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
             }
         } catch (IOException e) {
             e.printStackTrace();

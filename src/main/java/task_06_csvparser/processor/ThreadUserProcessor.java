@@ -32,7 +32,9 @@ public class ThreadUserProcessor {
     private void initThreads(Runnable runnable) {
         threads = new ArrayList<>();
         for (int i = 0; i < THREAD_AMOUNT; i++) {
-            threads.add(new Thread(runnable));
+            Thread thread = new Thread(runnable);
+            thread.setName("Parsing thread №" + i);
+            threads.add(thread);
         }
     }
 
