@@ -1,6 +1,8 @@
 package task_06_csvparser.model;
 
-public class UserDataUnit {
+import org.jetbrains.annotations.NotNull;
+
+public class UserDataUnit implements Comparable{
     private long id;
     private String url;
     private long timeSpend;
@@ -53,5 +55,11 @@ public class UserDataUnit {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public int compareTo(@NotNull Object o) {
+        UserDataUnit dataUnit = (UserDataUnit) o;
+        return this.getName().compareTo(dataUnit.getName());
     }
 }

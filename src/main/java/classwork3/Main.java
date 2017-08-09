@@ -4,9 +4,9 @@ import java.io.IOException;
 
 public class Main {
     /**
-     * Amount of Russian kolbasa (or cash, doesn't matter really)
+     * Amount of Russian meat product (or cash, doesn't matter really)
      */
-    private static int kolbasaAmount = 50;
+    private static int meatProductAmount = 50;
 
     /**
      * simple flag - true or false values
@@ -42,32 +42,32 @@ public class Main {
     }
 
     /**
-     * Creates threads to buy kolbasa or waste some cash(doesn't matter)
-     * @param threadAmount anoun of threads
+     * Creates threads to buy meat product or waste some cash(doesn't matter)
+     * @param threadAmount amount of threads
      */
     private static void kolbasaEatExample(int threadAmount) {
         for (int i = 0; i < threadAmount; i++) {
             new Thread(() -> {
-                buyKolbasa(50);
+                buyMeatProduct(50);
             }).start();
         }
     }
 
     /**
-     * If requested kolbasa is more than amount - buys it
-     * @param requestedKolbasa kolbasa to buy
+     * If requested meat product is more than amount - buys it
+     * @param requestedMeatProduct meat product to buy
      */
-    private synchronized static void buyKolbasa(int requestedKolbasa) {
-        if (kolbasaAmount >= requestedKolbasa) {
+    private synchronized static void buyMeatProduct(int requestedMeatProduct) {
+        if (meatProductAmount >= requestedMeatProduct) {
             try {
                 Thread.sleep(1);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            kolbasaAmount -= requestedKolbasa;
-            System.err.println("Kolbasa has been eaten: " + kolbasaAmount);
+            meatProductAmount -= requestedMeatProduct;
+            System.err.println("Meat product has been eaten: " + meatProductAmount);
         } else {
-            System.err.println("Not enough kolbasa: " + kolbasaAmount);
+            System.err.println("Not enough meat product: " + meatProductAmount);
         }
     }
 }
