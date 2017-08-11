@@ -1,8 +1,7 @@
 package task_06_csvparser.processor;
 
-import task_06_csvparser.model.CsvParser;
 import task_06_csvparser.model.UserDataUnit;
-import task_06_csvparser.utils.CsvParserUtil;
+import task_06_csvparser.utils.CsvParserUtils;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -13,19 +12,16 @@ import java.util.concurrent.BlockingQueue;
 
 public class ThreadUserProcessor {
     private static final int THREAD_AMOUNT = 10;
-    private BlockingQueue<File> queue;
     private BlockingQueue<UserDataUnit> resultQueue;
     private ArrayList<Thread> threads;
-    Runnable runnable;
 
     public BlockingQueue<UserDataUnit> getResultQueue() {
         return resultQueue;
     }
 
     public ThreadUserProcessor(BlockingQueue<File> workFileQueue) {
-        this.queue = workFileQueue;
         resultQueue = new ArrayBlockingQueue<>(250);
-        runnable = new CsvParser(queue, resultQueue);
+        Runnable runnable = new CsvParser(workFileQueue, resultQueue);
         initThreads(runnable);
     }
 
@@ -48,13 +44,13 @@ public class ThreadUserProcessor {
             thread.join();
         }
 
-        File file = formOutputFile();
+        File file = formResultArray();
     }
 
-    private File formOutputFile() {
+    private File formResultArray() {
         List<UserDataUnit> userList = transformResults();
         sortAndCalculateResults(userList);
-        CsvParserUtil.putUserDataInFile(userList);
+        CsvParserUtils.createAndFillResults(userList);
         return null;
     }
 

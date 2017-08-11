@@ -4,13 +4,22 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
 import org.apache.commons.csv.CSVRecord;
 import task_06_csvparser.model.UserDataUnit;
-import task_06_csvparser.providers.ArrayUserDataProvider;
+import task_06_csvparser.providers.AbstractDataProvider;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CsvParserUtil {
+/**
+ * Helper class for parsing of given data files and creating result csv files
+ */
+public class CsvParserUtils {
+
+    /**
+     * Parses given file
+     * @param file file for parse
+     * @return list of user data units in file
+     */
     public static List<UserDataUnit> parseUserHistoryCsv(File file) {
         List<UserDataUnit> userDataUnit = new ArrayList<>();
         try (Reader in = new FileReader(file)) {
@@ -29,8 +38,13 @@ public class CsvParserUtil {
         return userDataUnit;
     }
 
-    public static void putUserDataInFile (List<UserDataUnit> dataList) {
-        final String resultFilePath = ArrayUserDataProvider.resultFolder + "\\result.csv";
+    /**
+     * Clears old result file
+     * and creates, fills new with data from given List
+     * @param dataList fist of user data units
+     */
+    public static void createAndFillResults(List<UserDataUnit> dataList) {
+        final String resultFilePath = AbstractDataProvider.resultFile;
         File resultFile = new File(resultFilePath);
 
         if (resultFile.delete()) {

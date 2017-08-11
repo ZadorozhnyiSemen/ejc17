@@ -2,7 +2,13 @@ package task_06_csvparser.model;
 
 import org.jetbrains.annotations.NotNull;
 
-public class UserDataUnit implements Comparable{
+/**
+ * Simple class that represents data about user activity
+ * on web, activity forms from id, url that were visited,
+ * time spent, and user name.
+ * Comparable by user name
+ */
+public class UserDataUnit implements Comparable {
     private long id;
     private String url;
     private long timeSpend;
