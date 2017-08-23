@@ -1,4 +1,4 @@
-package algorythms.sort;
+package algorithms.sort;
 
 import org.junit.Before;
 import org.junit.Test;

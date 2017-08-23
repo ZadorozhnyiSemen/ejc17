@@ -1,4 +1,4 @@
-package algorythms.sort;
+package algorithms.sort;
 
 /**
  * Whenever object implements this interface this means

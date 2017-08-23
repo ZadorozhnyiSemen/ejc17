@@ -1,4 +1,4 @@
-package algorythms.search;
+package algorithms.search;
 
 /**
  * Binary search class <br>
